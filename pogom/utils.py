@@ -115,7 +115,7 @@ def get_args():
                         action='store_true', default=False)
     parser.add_argument('-os', '--only-server',
                         help='Server-Only Mode. Starts only the Webserver without the searcher.',
-                        action='store_true', default=False)
+                        action='store_true', default=True)
     parser.add_argument('-nsc', '--no-search-control',
                         help='Disables search control',
                         action='store_false', dest='search_control', default=True)
@@ -162,7 +162,7 @@ def get_args():
     parser.add_argument('--db-host', help='IP or hostname for the database')
     parser.add_argument('--db-port', help='Port for the database', type=int, default=3306)
     parser.add_argument('--db-max_connections', help='Max connections (per thread) for the database',
-                        type=int, default=500)
+                        type=int, default=5000)
     parser.add_argument('--db-threads', help='Number of db threads; increase if the db queue falls behind',
                         type=int, default=1)
     parser.add_argument('-wh', '--webhook', help='Define URL(s) to POST webhook information to',
